@@ -74,3 +74,14 @@
 * Example: “If you’re happy, here are some links to donate, volunteer, and cat youtube video!”
 * Add animation in the main page: One for music (like a vinyl) and one for shows.
 * For local storage, you only want the user to press a “save” button and it will save the information instead of saving all of their results/ Can have a log in to specify user.
+
+
+
+
+> ## Wire Frame
+
+![alt text](img/wireFrame.PNG)
+
+> ## Flow Chart
+
+![alt text](img/FlowChart.PNG)
