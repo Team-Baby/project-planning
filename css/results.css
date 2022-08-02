@@ -1,0 +1,9 @@
+/* main {
+  display: flex;
+} */
+
+
+main div p {
+  margin: auto;
+  width: 50%;
+}
