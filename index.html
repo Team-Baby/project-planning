@@ -40,34 +40,86 @@
         <legend>We Truly Care. Tell us more about what is going on for you.</legend>
 
         <label for="Question Name">Now That You Know More About Us, We Want to Know More About You! Tell Us Your Name!</label>
-        <input type="text" id="Name" name="username">
+        <input type="text" id="Name" name="username" required>
+
 
         <label for="Question 1">Question 1: How Much Do You Sleep Per Night? </label>
-        <select name="answer" id="sleep"></select>
 
+        <select name="answer" id="sleep" required>
+          <option value="select">Select:</option>
+          <option value="sleeper5">I Get All of The Sleep I Could Ever Want!!</option>
+          <option value="sleeper4">I Get Just Enough Sleep.</option>
+          <option value="sleeper3">I...Get Sleep, Mayber Could Use More.</option>
+          <option value="sleeper2">I Seriously Need More Sleep.</option>
+          <option value="sleeper1">SLEEP?? What Is That?</option>
+        </select>
 
         <label for="Question 2">Question 2: How Many Meals a Day Do You Eat? </label>
-        <select name="answer" id="meal"></select>
 
+        <select name="answer" id="meal" required>
+          <option value="select">Select:</option>
+          <option value="eating5">5</option>
+          <option value="eating4">4</option>
+          <option value="eating3">3</option>
+          <option value="eating2">2</option>
+          <option value="eating1">1</option>
+        </select>
 
         <label for="Question 3">Question 3: How Often Does Your Mood Change? </label>
-        <select name="answer" id="change"></select>
 
+        <select name="answer" id="change" required>
+          <option value="select">Select:</option>
+          <option value="swing5">All the Time</option>
+          <option value="swing4">Often</option>
+          <option value="swing3">Sometimes</option>
+          <option value="swing2">Rarely</option>
+          <option value="swing1">Never</option>
+        </select>
 
         <label for="Question 4">Question 4: How Is Your Active Lifestyle? </label>
-        <select name="answer" id="active"></select>
+
+        <select name="answer" id="active" required>
+          <option value="select">Select:</option>
+          <option value="life5">Couch Potato</option>
+          <option value="life4">I Walk Here and There</option>
+          <option value="life3">I Like to Move at Least 3 Days a Week</option>
+          <option value="life2">I'm Very Active</option>
+          <option value="life1">Fitness Is Life!</option>
+        </select>
 
 
          <label for="Question 5">Question 5: How Happy Are You With Your Job? </label>
-         <select name="answer" id="job"></select>
 
+         <select name="answer" id="job" required>
+          <option value="select">Select:</option>
+          <option value="boss5">I Just LOVE My Boss! We're the Best Buddies!</option>
+          <option value="boss4">My Boss is Awesome! Super Supportive</option>
+          <option value="boss3">We Get Along, Nothing to Complain</option>
+          <option value="boss2">My Boss Isn't the Best</option>
+          <option value="boss1">I HATE My Boss!!</option>
+        </select>
 
          <label for="Question 6">Question 6: How Are You Financially? </label>
-         <select name="answer" id="finance"></select>
+
+         <select name="answer" id="finance" required>
+          <option value="select">Select:</option>
+          <option value="money5">We're Rich Over Here Baby!</option>
+          <option value="money4">Wealthy, Can't Complain</option>
+          <option value="money3">Could Be Worse, Could Be Better</option>
+          <option value="money2">Not Doing to Well</option>
+          <option value="money1">I Count Every Dollar That I Have, and It's Not A lot.</option>
+        </select>
 
          <label for="Question 7">Question 7: Have You Experienced Any of The Following? </label>
-         <select name="answer" id="history"></select>
 
+         <select name="answer" id="history" required>
+          <option value="select">Select:</option>
+          <option value="experience5">Depression</option>
+          <option value="experience4">Anxiety Disorders</option>
+          <option value="experience3">PTSD</option>
+          <option value="experience2">Bipolar Disorder</option>
+          <option value="experience1">Paranoia</option>
+        </select>
 
 
       <button type="submit" a>Submit</button>
