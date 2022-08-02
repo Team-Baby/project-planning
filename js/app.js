@@ -243,6 +243,7 @@ function handleSubmit(event){
   addVariables(sleep, food, mood, activity, job, finance);
 
   myForm.reset();
+  location.replace('results.html');
 }
 
 
