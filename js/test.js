@@ -1,14 +1,11 @@
 'use strict';
+
 // List of Emotions and Score 
 // let Sad = (6-12)
 // let Lonely = (13-19)
 // let Bored = (20-26)
 // let Frustrated = (27-33)
 // let Happy = (34-42)
-
-
-
-
 
 
 
@@ -52,7 +49,7 @@ function handleSubmit(event){
 
   // Call the adding function
   addVariables(sleep, food, mood, activity, job, finance);
- 
+
   myForm.reset();
 }
 
@@ -65,24 +62,24 @@ function addVariables(sleep, food, mood, activity, job, finance)
   let calMood = 0;
 
   // Sad Scenario
-if(userResponse >= 6 && userResponse < 12){
-  calMood = 1;
-  } 
-   // Lonely 
+  if (userResponse >= 6 && userResponse < 12){
+    calMood = 1;
+  }
+  // Lonely
   else if(userResponse >= 13 && userResponse < 19){
-     calMood = 2;
-  } 
-  // Bored 
+    calMood = 2;
+  }
+  // Bored
   else if(userResponse >= 20 && userResponse < 26){
-     calMood = 3;
-  } 
+    calMood = 3;
+  }
   // Frustrated
   else if(userResponse >= 27 && userResponse < 33){
-     calMood = 4;
-  } 
-  // Happy 
+    calMood = 4;
+  }
+  // Happy
   else if(userResponse >= 31 && userResponse< 36){
-     calMood = 5;
+    calMood = 5;
   }
   return calMood;
 }
