@@ -14,7 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- <img id="small-img" src="img/salmon.png" alt="Super cool salmon pic"> -->
   <h1>Mood Support</h1>
   <header>
     <nav>
@@ -27,10 +26,16 @@
   </header>
 
   <main>
-    <div>
-      <h1> Welcome home!</h1>
-      <img src="img/gerbil.png" alt="Super cool pic">
-    </div>
+    <form id="mood-form">
+      <fieldset>
+        <legend>We care. Tell us more about what is going on for you.</legend>
+
+        <label for="Question 1">Question 1: </label>
+        <input id="userName" type="text" name="userName" placeholder="ex. Donald Trump" required>
+
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
   </main>
 
   <footer>
