@@ -27,7 +27,6 @@ function EmotionMasterList (emotion, songList, movieList, quote, additionalResou
 }
 
 
-
 function SongList (emotion, title, genre, artist, releaseDate, album){
   this.emotion = emotion;
   this.title = title;
@@ -40,13 +39,38 @@ function SongList (emotion, title, genre, artist, releaseDate, album){
 }
 
 
+function MovieList (emotion, title, genre, star, releaseDate, rating){
+  this.emotion = emotion;
+  this.title = title;
+  this.genre = genre;
+  this.star = star;
+  this.releaseDate = releaseDate;
+  this.rating = rating;
+
+  movieMasterList.push(this);
+}
+
+let store
+
+function renderHappyEmotion (){
+  let songULElem = document.createElement('ul');
+
+
+}
+
+
+
+
+
+
+
 new SongList ('Happy', 'Good as Hell', 'Soul', 'Lizzo', 2016, 'Cuz I Love You');
 new SongList ('Happy', 'Dancing Queen', 'Pop', 'ABBA', 1976, 'Arrival');
 new SongList ('Happy', 'Don\'t Stop Believin\'', 'Rock', 'Journey', 1981, 'Escape')
 new SongList ('Happy', 'Touch the Sky', 'Rap', 'Kayne West', 2005, 'Late Registration');
 new SongList ('Happy', 'This Kiss', 'Country', 'Faith Hill', 1998, 'Faith');
 
-new SongList ('Sad', 'Something In The Way', 'Rock', 'Nirvana' 1993, 'Nevermind');
+new SongList ('Sad', 'Something In The Way', 'Rock', 'Nirvana', 1993, 'Nevermind');
 new SongList ('Sad', 'When the Party\'s Over', 'Pop', 'Billie Elish', 2019, 'When We Fall Asleep, Where Do We Go?');
 new SongList ('Sad', 'Un-Break My Heart', 'R&B', 'Toni Braxton', 1996, 'Secrets');
 new SongList ('Sad', 'What Hurts the Most', 'Country', 'Rascal Flatts', 2008, 'Rascal Flats');
@@ -69,20 +93,6 @@ new SongList('Lonely', 'Tired of Being Alone', 'Soul', 'Al Green', 1971, 'Al Gre
 new SongList('Lonely', 'All by Myself', 'Soft Rock', 'Eric Carmen', 1975, 'Eric Carmen');
 new SongList('Lonely', 'Here I Go Again', 'Hard Rock', 'Whitesnake', 1982, 'Saints & Sinners');
 new SongList('Lonely', 'Drowning Shadows', 'Soul', 'Sam Smith', 2014, 'In The Lonely Hour');
-
-
-
-
-function MovieList (emotion, title, genre, star, releaseDate, rating){
-  this.emotion = emotion;
-  this.title = title;
-  this.genre = genre;
-  this.star = star;
-  this.releaseDate = releaseDate;
-  this.rating = rating;
-
-  movieMasterList.push(this);
-}
 
 new MovieList ('Happy', 'The Jane Austen Book Club', 'Comedy', 'Kathy Baker', 2007, 'PG13');
 new MovieList ('Happy', '500 Days of Summer', 'Romance', 'Will Smith', 2005, 'PG13');
