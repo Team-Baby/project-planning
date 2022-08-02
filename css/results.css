@@ -1,9 +1,21 @@
-/* main {
-  display: flex;
-} */
-
-
 main div p {
   margin: auto;
   width: 50%;
+}
+
+h2 {
+  font-size: 1.75em;
+  /* margin: auto; */
+  margin: 30px;
+}
+
+#songsAndMovies {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div ul {
+  border-style: solid;
+  border-width: thin;
+  /* margin-top: 30px; */
 }
