@@ -1,31 +1,9 @@
 
-let emotionMasterList = [];
 let songMasterList = [];
+let movieMasterList = [];
 
-function emotionResult (){
-  if (questionListResult > 15){
-    return emotionMasterList[0];
-  } if else (questionListResult > 10){
-    return emotionMasterList[1];
-  } if else (questionListResult > 7){
-    return emotionMasterList[2];
-  } if else (questionListResult > 4){
-    return emotionMasterList[3];
-  } else {
-    return emotionMasterList[4];
-  }
-}
 
-function EmotionMasterList (emotion, songList, movieList, quote, additionalResources){
-  this.emotion = emotion;
-  this.songList = [];
-  this.movieList = [];
-
-  
-  this.quote = quote;
-  this.additionalResources = additionalResources;
-}
-
+// Order of Songs is IMPORTANT and will give incorrect output if changed
 
 function SongList (emotion, title, genre, artist, releaseDate, album){
   this.emotion = emotion;
@@ -34,39 +12,14 @@ function SongList (emotion, title, genre, artist, releaseDate, album){
   this.artist = artist;
   this.releaseDate = releaseDate;
   this.album = album;
-  
+
   songMasterList.push(this);
 }
 
 
-function MovieList (emotion, title, genre, star, releaseDate, rating){
-  this.emotion = emotion;
-  this.title = title;
-  this.genre = genre;
-  this.star = star;
-  this.releaseDate = releaseDate;
-  this.rating = rating;
-
-  movieMasterList.push(this);
-}
-
-let store
-
-function renderHappyEmotion (){
-  let songULElem = document.createElement('ul');
-
-
-}
-
-
-
-
-
-
-
 new SongList ('Happy', 'Good as Hell', 'Soul', 'Lizzo', 2016, 'Cuz I Love You');
 new SongList ('Happy', 'Dancing Queen', 'Pop', 'ABBA', 1976, 'Arrival');
-new SongList ('Happy', 'Don\'t Stop Believin\'', 'Rock', 'Journey', 1981, 'Escape')
+new SongList ('Happy', 'Don\'t Stop Believin\'', 'Rock', 'Journey', 1981, 'Escape');
 new SongList ('Happy', 'Touch the Sky', 'Rap', 'Kayne West', 2005, 'Late Registration');
 new SongList ('Happy', 'This Kiss', 'Country', 'Faith Hill', 1998, 'Faith');
 
@@ -93,6 +46,21 @@ new SongList('Lonely', 'Tired of Being Alone', 'Soul', 'Al Green', 1971, 'Al Gre
 new SongList('Lonely', 'All by Myself', 'Soft Rock', 'Eric Carmen', 1975, 'Eric Carmen');
 new SongList('Lonely', 'Here I Go Again', 'Hard Rock', 'Whitesnake', 1982, 'Saints & Sinners');
 new SongList('Lonely', 'Drowning Shadows', 'Soul', 'Sam Smith', 2014, 'In The Lonely Hour');
+
+
+// Order of Movie is IMPORTANT and will give incorrect output if changed
+
+function MovieList (emotion, title, genre, star, releaseDate, rating){
+  this.emotion = emotion;
+  this.title = title;
+  this.genre = genre;
+  this.star = star;
+  this.releaseDate = releaseDate;
+  this.rating = rating;
+
+  movieMasterList.push(this);
+}
+
 
 new MovieList ('Happy', 'The Jane Austen Book Club', 'Comedy', 'Kathy Baker', 2007, 'PG13');
 new MovieList ('Happy', '500 Days of Summer', 'Romance', 'Will Smith', 2005, 'PG13');
@@ -123,3 +91,143 @@ new MovieList ('Lonely', 'Where The Wild Things Are', 'Drama', 'Max Records', 20
 new MovieList ('Lonely', 'The Martian', 'Drama', 'Matt Damon', 2015, 'PG13');
 new MovieList ('Lonely', 'Taxi Driver', 'Drama', 'Robert De Niro', 1976, 'R');
 new MovieList ('Lonely', 'Gravity', 'Drama', 'Sandra Bullock', 2013, 'PG13');
+
+
+let yourSongsUL = document.getElementById ('yourSongs');
+let yourMoviesUL = document.getElementById ('yourMovies');
+let theQuoteDiv = document.getElementById ('theQuote');
+let theReferencesDiv = document.getElementById ('theReferences');
+
+
+function renderHappyEmotion (){
+
+  for(let i = 0; i<5; i++) {
+    let songLIElem = document.createElement('li');
+    songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
+    yourSongsUL.appendChild(songLIElem);
+  }
+
+  for(let i = 0; i<5; i++) {
+    let movieLIElem = document.createElement('li');
+    movieLIElem.textContent = `${movieMasterList[i].title} with ${movieMasterList[i].star}. Released in ${movieMasterList[i].releaseDate} Rated: ${movieMasterList[i].rating}`;
+    yourMoviesUL.appendChild(movieLIElem);
+  }
+
+  let quoteDivPElem = document.createElement('p');
+  quoteDivPElem.textContent = 'Happy Happy Joy Joy - fill in more info';
+  theQuoteDiv.appendChild(quoteDivPElem);
+
+  let theReferencesDivPElem = document.createElement('p');
+  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: HAPPY';
+  theReferencesDiv.appendChild(theReferencesDivPElem);
+}
+
+
+function renderSadEmotion (){
+
+  for(let i = 5; i<10; i++) {
+    let songLIElem = document.createElement('li');
+    songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
+    yourSongsUL.appendChild(songLIElem);
+  }
+
+  for(let i = 5; i<10; i++) {
+    let movieLIElem = document.createElement('li');
+    movieLIElem.textContent = `${movieMasterList[i].title} with ${movieMasterList[i].star}. Released in ${movieMasterList[i].releaseDate} Rated: ${movieMasterList[i].rating}`;
+    yourMoviesUL.appendChild(movieLIElem);
+  }
+
+  let quoteDivPElem = document.createElement('p');
+  quoteDivPElem.textContent = 'Sad Sad Sad Sad - fill in more info';
+  theQuoteDiv.appendChild(quoteDivPElem);
+
+  let theReferencesDivPElem = document.createElement('p');
+  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: SAD ';
+  theReferencesDiv.appendChild(theReferencesDivPElem);
+}
+
+
+function renderFrustratedEmotion (){
+
+  for(let i = 10; i<15; i++) {
+    let songLIElem = document.createElement('li');
+    songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
+    yourSongsUL.appendChild(songLIElem);
+  }
+
+  for(let i = 10; i<15; i++) {
+    let movieLIElem = document.createElement('li');
+    movieLIElem.textContent = `${movieMasterList[i].title} with ${movieMasterList[i].star}. Released in ${movieMasterList[i].releaseDate} Rated: ${movieMasterList[i].rating}`;
+    yourMoviesUL.appendChild(movieLIElem);
+  }
+
+  let quoteDivPElem = document.createElement('p');
+  quoteDivPElem.textContent = 'Frustrated Frustrated Frustrated - fill in more info';
+  theQuoteDiv.appendChild(quoteDivPElem);
+
+  let theReferencesDivPElem = document.createElement('p');
+  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: FRUSTRATED ';
+  theReferencesDiv.appendChild(theReferencesDivPElem);
+}
+
+
+function renderBoredEmotion (){
+
+  for(let i = 15; i<20; i++) {
+    let songLIElem = document.createElement('li');
+    songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
+    yourSongsUL.appendChild(songLIElem);
+  }
+
+  for(let i = 15; i<20; i++) {
+    let movieLIElem = document.createElement('li');
+    movieLIElem.textContent = `${movieMasterList[i].title} with ${movieMasterList[i].star}. Released in ${movieMasterList[i].releaseDate} Rated: ${movieMasterList[i].rating}`;
+    yourMoviesUL.appendChild(movieLIElem);
+  }
+
+  let quoteDivPElem = document.createElement('p');
+  quoteDivPElem.textContent = 'Bored Bored Bored - fill in more info';
+  theQuoteDiv.appendChild(quoteDivPElem);
+
+  let theReferencesDivPElem = document.createElement('p');
+  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: BORED ';
+  theReferencesDiv.appendChild(theReferencesDivPElem);
+}
+
+
+function renderLonelyEmotion (){
+
+  for(let i = 20; i<25; i++) {
+    let songLIElem = document.createElement('li');
+    songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
+    yourSongsUL.appendChild(songLIElem);
+  }
+
+  for(let i = 20; i<25; i++) {
+    let movieLIElem = document.createElement('li');
+    movieLIElem.textContent = `${movieMasterList[i].title} with ${movieMasterList[i].star}. Released in ${movieMasterList[i].releaseDate} Rated: ${movieMasterList[i].rating}`;
+    yourMoviesUL.appendChild(movieLIElem);
+  }
+
+  let quoteDivPElem = document.createElement('p');
+  quoteDivPElem.textContent = 'Lonely Lonely Lonely - fill in more info';
+  theQuoteDiv.appendChild(quoteDivPElem);
+
+  let theReferencesDivPElem = document.createElement('p');
+  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: LONELY ';
+  theReferencesDiv.appendChild(theReferencesDivPElem);
+}
+
+
+// renderHappyEmotion();
+// renderSadEmotion();
+// renderFrustratedEmotion();
+// renderBoredEmotion();
+// renderLonelyEmotion();
+
+// console.log(songMasterList[0]);
+
+
+
+
+
