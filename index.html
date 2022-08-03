@@ -33,7 +33,7 @@
     </section>
 
 
-    <form id="mood-form" action="/results.html">
+    <form id="mood-form">
 
         <!-- Create Labels for each question, and a select tag for a dropdown menu with ids to link with JavaScript. -->
       <fieldset>
@@ -44,7 +44,6 @@
 
 
         <label for="Question 1">Question 1: How Much Do You Sleep Per Night? </label>
-
         <select name="answer" id="sleep" required>
           <option value="select">Select:</option>
           <option value="7">I Get All of The Sleep I Could Ever Want!!</option>
@@ -55,7 +54,6 @@
         </select>
 
         <label for="Question 2">Question 2: How Many Meals a Day Do You Eat? </label>
-
         <select name="answer" id="meal" required>
           <option value="select">Select:</option>
           <option value="7">5</option>
@@ -66,7 +64,6 @@
         </select>
 
         <label for="Question 3">Question 3: How Often Does Your Mood Change? </label>
-
         <select name="answer" id="change" required>
           <option value="select">Select:</option>
           <option value="7">All the Time</option>
@@ -77,7 +74,6 @@
         </select>
 
         <label for="Question 4">Question 4: How Is Your Active Lifestyle? </label>
-
         <select name="answer" id="active" required>
           <option value="select">Select:</option>
           <option value="7">Fitness Is Life!</option>
@@ -87,9 +83,7 @@
           <option value="1">Couch Potato</option>
         </select>
 
-
          <label for="Question 5">Question 5: How Happy Are You With Your Job? </label>
-
          <select name="answer" id="job" required>
           <option value="select">Select:</option>
           <option value="7">I Just LOVE My Boss! We're the Best Buddies!</option>
@@ -100,7 +94,6 @@
         </select>
 
          <label for="Question 6">Question 6: How Are You Financially? </label>
-
          <select name="answer" id="finance" required>
           <option value="select">Select:</option>
           <option value="7">We're Rich Over Here Baby!</option>
@@ -111,8 +104,8 @@
         </select>
 
         <!-- Seperate Question output, will link a page for each choice that the user makes -->
-         <label for="Question 7">Question 7: Have You Experienced Any of The Following? </label>
 
+         <label for="Question 7">Question 7: Have You Experienced Any of The Following? </label>
          <select name="answer" id="history" required>
           <option value="select">Select:</option>
           <option value="7">Depression</option>
@@ -122,8 +115,7 @@
           <option value="1">Paranoia</option>
         </select>
 
-
-      <button type="submit" a>Submit</button>
+      <button type="submit">Submit</button>
 
     </form>
   </main>
