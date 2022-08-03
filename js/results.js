@@ -263,27 +263,53 @@ function renderLonelyEmotion (){
 }
 
 
+function renderMoodContent (){
+  let moodOverAll = document.getElementById('moodHeader');
+
+
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'EMOTION:??';
+  moodOverAll.appendChild(moodHeadE);
+
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Content associated with THIS EMOTION';
+  moodOverAll.appendChild(moodContentP);
+}
+
+
+// let moodMaster = {},
+//   moodHeader = 'Happy';
+//   // moodContentP = {};
+
+//   // moodHeader : 'Happy', 'Frustrated', 'Bored', 'Lonely', 'Sad'
+
+// console.log(moodMaster.moodHeader[0]);
+
+
+
+
+
 // carries storedUserResponse from app.js page for use to determine which Emotion to render and what is saved in storage to and sent to index.html
 
 let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
 
 if (storedUserResponse >= 6 && storedUserResponse < 12){
   renderSadEmotion();
+  renderMoodContent();
 }
 else if(storedUserResponse >= 13 && storedUserResponse < 19){
   renderLonelyEmotion();
+  renderMoodContent();
 }
 else if(storedUserResponse >= 20 && storedUserResponse < 26){
-
   renderBoredEmotion();
+  renderMoodContent();
 }
 else if(storedUserResponse >= 27 && storedUserResponse < 33){
-
   renderFrustratedEmotion();
+  renderMoodContent();
 }
 else if(storedUserResponse >= 34 && storedUserResponse< 45){
   renderHappyEmotion();
+  renderMoodContent();
 }
-
-
-//moodHeader : Main.Div.h
