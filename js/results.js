@@ -281,6 +281,9 @@ else if(storedUserResponse >= 27 && storedUserResponse < 33){
 
   renderFrustratedEmotion();
 }
-else if(storedUserResponse >= 31 && storedUserResponse< 46){
+else if(storedUserResponse >= 34 && storedUserResponse< 45){
   renderHappyEmotion();
 }
+
+
+//moodHeader : Main.Div.h

@@ -3,12 +3,13 @@
 let userResponse;
 let myForm = document.getElementById('mood-form');
 
+
+
 function addVariables(sleep, food, mood, activity, job, finance){
   let userResponse = parseInt(sleep) + parseInt(food) + parseInt(mood) + parseInt(activity) + parseInt(job) + parseInt(finance);
 
   return userResponse;
 }
-
 
 function handleSubmit(event){
   event.preventDefault();
@@ -16,15 +17,10 @@ function handleSubmit(event){
   // let name = event.target.Name.value;
 
   let sleep = event.target.sleep.value;
-
   let food = event.target.meal.value;
-
   let mood = event.target.change.value;
-
   let activity = event.target.active.value;
-
   let job = event.target.job.value;
-
   let finance = event.target.finance.value;
 
   userResponse = addVariables(sleep, food, mood, activity, job, finance);
@@ -35,12 +31,53 @@ function handleSubmit(event){
   location.replace('results.html');
 }
 
-// ATTACH MY EVENT LISTENER
-myForm.addEventListener('submit', handleSubmit);
-
-// Recall from history of form completion. Contains array of songs and movies for display.
 
 let stringEmotionRecall = JSON.parse(localStorage.getItem('stringEmotionKey'));
+
+let myHistory = document.getElementById('historyFromResults');
+
+// function handleSubmit2(event){
+//   event.preventDefault();
+
+
+let songListHisotry = document.createElement('p');
+songListHisotry.textContent = 'Song list from last time you were here:';
+myHistory.appendChild(songListHisotry);
+
+let mySongArticleUL = document.createElement('ul');
+myHistory.appendChild(mySongArticleUL);
+
+for (let i = 0; i < 5; i++){
+  let mySongLI = document.createElement('li');
+  mySongLI.textContent = `${stringEmotionRecall[0][i].title} by ${stringEmotionRecall[0][i].artist}. Released in ${stringEmotionRecall[0][i].releaseDate} on Album: ${stringEmotionRecall[0][i].album}`;
+  myHistory.appendChild(mySongLI);
+}
+
+let movieListHistory = document.createElement('p');
+movieListHistory.textContent = 'Movie list from last time you were here:';
+myHistory.appendChild(movieListHistory);
+
+let myMovieArticleUL = document.createElement('ul');
+myHistory.appendChild(myMovieArticleUL);
+
+for (let i = 0; i < 5; i++){
+  let myMovieLI = document.createElement('li');
+  myMovieLI.textContent = `${stringEmotionRecall[1][i].title} with ${stringEmotionRecall[1][i].artist}. Released in ${stringEmotionRecall[1][i].releaseDate}. Rated: ${stringEmotionRecall[1][i].rating}`;
+  myHistory.appendChild(myMovieLI);
+}
+
+
+
+
+// }
+
+
+
+// ATTACH MY EVENT LISTENER
+myForm.addEventListener('submit', handleSubmit);
+// myHistory.addEventListener('submit', handleSubmit2);
+
+
 
 console.log(stringEmotionRecall);
 
@@ -48,4 +85,5 @@ console.log(stringEmotionRecall[0]);
 
 console.log(stringEmotionRecall[0][0]);
 
-console.log(stringEmotionRecall[0][0].artist);
+console.log(stringEmotionRecall[0][1].title);
+
