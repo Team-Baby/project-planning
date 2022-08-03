@@ -94,12 +94,6 @@ let theReferencesDiv = document.getElementById ('theReferences');
 
 
 function renderHappyEmotion (){
-  let happySongList = songMasterList.filter(song => song.emotion === 'Happy');
-  let happyMovieList = movieMasterList.filter(movie => movie.emotion === 'Happy');
-
-  console.log(happySongList);
-  console.log(happyMovieList);
-
   for(let i = 0; i<5; i++) {
     let songLIElem = document.createElement('li');
     songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
@@ -119,6 +113,17 @@ function renderHappyEmotion (){
   let theReferencesDivPElem = document.createElement('p');
   theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: HAPPY';
   theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  let happySongList = songMasterList.filter(song => song.emotion === 'Happy');
+  let happyMovieList = movieMasterList.filter(movie => movie.emotion === 'Happy');
+  let happyEmotionRecall = [];
+  happyEmotionRecall.push(happySongList);
+  happyEmotionRecall.push(happyMovieList);
+
+  console.log(happyEmotionRecall);
+
+  let stringEmotion = JSON.stringify(happyEmotionRecall);
+  localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 function renderSadEmotion (){
@@ -142,6 +147,17 @@ function renderSadEmotion (){
   let theReferencesDivPElem = document.createElement('p');
   theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: SAD ';
   theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  let sadSongList = songMasterList.filter(song => song.emotion === 'Sad');
+  let sadMovieList = movieMasterList.filter(movie => movie.emotion === 'Sad');
+  let sadEmotionRecall = [];
+  sadEmotionRecall.push(sadSongList);
+  sadEmotionRecall.push(sadMovieList);
+
+  console.log(sadEmotionRecall);
+
+  let stringEmotion = JSON.stringify(sadEmotionRecall);
+  localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 function renderFrustratedEmotion (){
@@ -165,6 +181,17 @@ function renderFrustratedEmotion (){
   let theReferencesDivPElem = document.createElement('p');
   theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: FRUSTRATED ';
   theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  let frustratedSongList = songMasterList.filter(song => song.emotion === 'Frustrated');
+  let frustratedMovieList = movieMasterList.filter(movie => movie.emotion === 'Frustrated');
+  let frustratedEmotionRecall = [];
+  frustratedEmotionRecall.push(frustratedSongList);
+  frustratedEmotionRecall.push(frustratedMovieList);
+
+  console.log(frustratedEmotionRecall);
+
+  let stringEmotion = JSON.stringify(frustratedEmotionRecall);
+  localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 function renderBoredEmotion (){
@@ -188,6 +215,17 @@ function renderBoredEmotion (){
   let theReferencesDivPElem = document.createElement('p');
   theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: BORED ';
   theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  let boredSongList = songMasterList.filter(song => song.emotion === 'Bored');
+  let boredMovieList = movieMasterList.filter(movie => movie.emotion === 'Bored');
+  let boredEmotionRecall = [];
+  boredEmotionRecall.push(boredSongList);
+  boredEmotionRecall.push(boredMovieList);
+
+  console.log(boredEmotionRecall);
+
+  let stringEmotion = JSON.stringify(boredEmotionRecall);
+  localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 function renderLonelyEmotion (){
@@ -211,37 +249,38 @@ function renderLonelyEmotion (){
   let theReferencesDivPElem = document.createElement('p');
   theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: LONELY ';
   theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  let lonelySongList = songMasterList.filter(song => song.emotion === 'Lonely');
+  let lonelyMovieList = movieMasterList.filter(movie => movie.emotion === 'Lonely');
+  let lonelyEmotionRecall = [];
+  lonelyEmotionRecall.push(lonelySongList);
+  lonelyEmotionRecall.push(lonelyMovieList);
+
+  console.log(lonelyEmotionRecall);
+
+  let stringEmotion = JSON.stringify(lonelyEmotionRecall);
+  localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 
-let storedUserResponse = JSON.parse(localStorage.getItem('myString'));
+// carries storedUserResponse from app.js page for use to determine which Emotion to render and what is saved in storage to and sent to index.html
 
-// Sad Scenario
+let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
+
 if (storedUserResponse >= 6 && storedUserResponse < 12){
-
   renderSadEmotion();
 }
-
-// Lonely
 else if(storedUserResponse >= 13 && storedUserResponse < 19){
-
   renderLonelyEmotion();
 }
-
-// Bored
 else if(storedUserResponse >= 20 && storedUserResponse < 26){
 
   renderBoredEmotion();
 }
-
-// Frustrated
 else if(storedUserResponse >= 27 && storedUserResponse < 33){
 
   renderFrustratedEmotion();
 }
-
-// Happy
 else if(storedUserResponse >= 31 && storedUserResponse< 46){
-
   renderHappyEmotion();
 }
