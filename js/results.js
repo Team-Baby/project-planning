@@ -1,6 +1,5 @@
 'use strict';
 
-
 let songMasterList = [];
 let movieMasterList = [];
 
@@ -93,7 +92,18 @@ let theQuoteDiv = document.getElementById ('theQuote');
 let theReferencesDiv = document.getElementById ('theReferences');
 
 
+
 function renderHappyEmotion (){
+
+  let moodOverAll = document.getElementById('moodHeader');
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'Happy?';
+  moodOverAll.appendChild(moodHeadE);
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Based on your choices, you are in a happy state of mind! Everyone wants to be happy, and it\'s important to maintain that mindset. Keep making that big smile as you take a look at our recommended list of songs and movies list. You will also see some references, check them out as well!';
+  moodOverAll.appendChild(moodContentP);
+
+
   for(let i = 0; i<5; i++) {
     let songLIElem = document.createElement('li');
     songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
@@ -128,6 +138,14 @@ function renderHappyEmotion (){
 
 function renderSadEmotion (){
 
+  let moodOverAll = document.getElementById('moodHeader');
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'Sad?';
+  moodOverAll.appendChild(moodHeadE);
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Based on your choices, you are in a sad state of mind! This is one of the 5 most common feelings, and it happens to everyone along with letting yourself experience that emotion. Take a deep breath and check out our recommended list of songs and movies. You will also see some references, check them out as well!';
+  moodOverAll.appendChild(moodContentP);
+
   for(let i = 5; i<10; i++) {
     let songLIElem = document.createElement('li');
     songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
@@ -154,13 +172,20 @@ function renderSadEmotion (){
   sadEmotionRecall.push(sadSongList);
   sadEmotionRecall.push(sadMovieList);
 
-  console.log(sadEmotionRecall);
-
   let stringEmotion = JSON.stringify(sadEmotionRecall);
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
 function renderFrustratedEmotion (){
+
+  let moodOverAll = document.getElementById('moodHeader');
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'Frustrated?';
+  moodOverAll.appendChild(moodHeadE);
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Based on your choices, you are in a frustrated state of mind! You may be angry, like you\'re ready to run through a brick wall! As it is a very common mood, it is one of the only moods that can be changed quickly. Embrace that emotion and take a look at our recommended list of songs and movies. You will also see some references, check them out as well!';
+  moodOverAll.appendChild(moodContentP);
+
 
   for(let i = 10; i<15; i++) {
     let songLIElem = document.createElement('li');
@@ -196,6 +221,14 @@ function renderFrustratedEmotion (){
 
 function renderBoredEmotion (){
 
+  let moodOverAll = document.getElementById('moodHeader');
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'Bored?';
+  moodOverAll.appendChild(moodHeadE);
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Based on your choices, you are in a bored state of mind! You are someone who may be active and enjoying things in life, but missing some fun! Take a look at our list of our recommended songs and movies. You will also see some references, check them out as well!';
+  moodOverAll.appendChild(moodContentP);
+
   for(let i = 15; i<20; i++) {
     let songLIElem = document.createElement('li');
     songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
@@ -230,6 +263,14 @@ function renderBoredEmotion (){
 
 function renderLonelyEmotion (){
 
+  let moodOverAll = document.getElementById('moodHeader');
+  let moodHeadE = document.createElement('h1');
+  moodHeadE.textContent = 'Lonely';
+  moodOverAll.appendChild(moodHeadE);
+  let moodContentP = document.createElement('p');
+  moodContentP.textContent = 'Based on your choices, you are in a lonely state of mind! Everyone feels lonely, even when you\'re surrounded by many others. We\'ve got your back, take a look at our list of songs and movies. You will also see some references, check them out as well!';
+  moodOverAll.appendChild(moodContentP);
+
   for(let i = 20; i<25; i++) {
     let songLIElem = document.createElement('li');
     songLIElem.textContent = `${songMasterList[i].title} by ${songMasterList[i].artist}. Released in ${songMasterList[i].releaseDate} on Album: ${songMasterList[i].album}`;
@@ -263,53 +304,28 @@ function renderLonelyEmotion (){
 }
 
 
-function renderMoodContent (){
-  let moodOverAll = document.getElementById('moodHeader');
-
-
-  let moodHeadE = document.createElement('h1');
-  moodHeadE.textContent = 'EMOTION:??';
-  moodOverAll.appendChild(moodHeadE);
-
-  let moodContentP = document.createElement('p');
-  moodContentP.textContent = 'Content associated with THIS EMOTION';
-  moodOverAll.appendChild(moodContentP);
-}
-
-
-// let moodMaster = {},
-//   moodHeader = 'Happy';
-//   // moodContentP = {};
-
-//   // moodHeader : 'Happy', 'Frustrated', 'Bored', 'Lonely', 'Sad'
-
-// console.log(moodMaster.moodHeader[0]);
-
-
-
-
-
 // carries storedUserResponse from app.js page for use to determine which Emotion to render and what is saved in storage to and sent to index.html
 
 let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
 
 if (storedUserResponse >= 6 && storedUserResponse < 12){
   renderSadEmotion();
-  renderMoodContent();
 }
 else if(storedUserResponse >= 13 && storedUserResponse < 19){
   renderLonelyEmotion();
-  renderMoodContent();
+  // renderMoodContent();
 }
 else if(storedUserResponse >= 20 && storedUserResponse < 26){
   renderBoredEmotion();
-  renderMoodContent();
+  // renderMoodContent();
 }
 else if(storedUserResponse >= 27 && storedUserResponse < 33){
   renderFrustratedEmotion();
-  renderMoodContent();
+  // renderMoodContent();
 }
 else if(storedUserResponse >= 34 && storedUserResponse< 45){
   renderHappyEmotion();
-  renderMoodContent();
+  // renderMoodContent();
 }
+
+console.log(storedUserResponse);
