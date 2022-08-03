@@ -1,11 +1,41 @@
 body {
-  background-color: #797d80;
+  background: linear-gradient(to left, #1a1ae0, #e5f04d);
   font-family: "Times New Roman", Times, serif;
-  color: lightsalmon;
+  color: rgb(255, 255, 255);
 }
 
+/* .navbar {
+  position: fixed;
+  background-color: var(--bg-primary); 
+  width: 5rem;
+  height: 100vh;
+  transition: width 600ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.navbar:hover {
+  width: 16rem;
+} */
+
 header {
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
   height: 100px;
 }
 
@@ -14,7 +44,12 @@ nav ul {
   justify-content: space-evenly;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* add detail to nav bar: */
+nav ul li{
+
+}
+
+h1, h2, h3 {
   font-family: 'Poppins', sans-serif; 
   color: white;
 }
@@ -32,18 +67,6 @@ h1 {
   margin-bottom: 50px;
 }
 
-#salmonLink {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background-color: #797d80;
-  font-size: 2em;
-  text-align: center;
-  padding: 20px; 0px;
-  display: block;
-  margin: auto auto 50px;
-  width: 50%;
-  text-decoration: underline;
-}
 
 main>h2 {
   font-size: 1.75em;
@@ -93,6 +116,7 @@ article img {
 p {
   font-size: 1.25em;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 ul {
@@ -119,21 +143,6 @@ img {
   padding: 10px;
 }
 
-body table * {
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(255,232,57);
-  background-color: #797d80;
-  border: 1px double #020005;
-  padding: 8px;
-}
-
-th {
-  font-weight:900;
-}
-
-td {
-  text-align: center;
-}
 
 button {
   background-color: rgba(83, 129, 235, 0.727);
@@ -141,7 +150,7 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 10px;
   padding: 15px;
   border-radius: 25px;
@@ -159,7 +168,7 @@ legend {
 fieldset {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(255,232,57);
+  border: 1px solid rgb(245, 245, 245);
   width: 400px;
   margin: auto;
   margin-top: 10px;
@@ -179,16 +188,106 @@ fieldset>input {
   margin-bottom: 15px;
 }
 
-footer {
+/* footer {
   display: flex;
   font-size: 0.90em;
   text-align: right;
   padding-right: 10px;
   height: 100px;
-  background-color: lightslategray;
-  margin-top: 15px;
+  /* background-color: lightslategray; */
+  /* margin-top: 15px; */
+/* }  */
+
+form label{
+  margin-top: 50px;
+  font-size: larger;
+}
+
+form label select{
+  box-shadow: 0 10px 25px black;
+  font-size: 1.5rem;
+  padding: 1em 1.5em;
+  background: #4d5061;
+  color: white;
+
+}
+
+h3{
+ text-align: center;
+ margin-top: 10px;
 }
 
 footer h6 {
   margin: auto;
+}
+
+
+/* Start of box animation. Assistance by: Youtube video: Animated Background with Pure CSS and Html by Divinector */
+.box-area li{
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: white;
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+
+.box-area li:nth-child(1){
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(2){
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration:10s;
+}
+
+.box-area li:nth-child(3){
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+  
+}
+
+.box-area li:nth-child(4){
+  left: 70%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+  
+}
+
+.box-area li:nth-child(5){
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(6){
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+
+
+@keyframes animate{
+  0%{
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
 }

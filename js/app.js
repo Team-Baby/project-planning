@@ -38,8 +38,14 @@ function handleSubmit(event){
 
   userResponse = addVariables(sleep, food, mood, activity, job, finance);
 
-  let stringUserResponse = JSON.stringify(userResponse);
-  localStorage.setItem('myString', stringUserResponse);
+
+  // Call the adding function
+  addVariables(sleep, food, mood, activity, job, finance);
+
+  myForm.reset();
+  location.replace('results.html');
+}
+
 
 
   location.replace('results.html');
