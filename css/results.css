@@ -3,7 +3,7 @@ main div p {
   width: 50%;
 }
 
-h2 {
+main h2 {
   font-size: 1.75em;
   /* margin: auto; */
   width: 100%;
@@ -31,5 +31,5 @@ li {
 div ul {
   border-style: solid;
   border-width: thin;
-  /* margin-top: 30px; */
 }
+
