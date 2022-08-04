@@ -56,6 +56,7 @@ h3 {
   margin-bottom: 30px;
 }
 
+
 a {
   font-size: larger;
   margin: auto;
@@ -66,4 +67,14 @@ a {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 60px;
+}
+
+.navbar-nav li:hover{
+  color: #111;
+  transform: scale(1.2);
+  text-shadow: none;
+  background-color: #ddd;
+  border: #e5f04d ridge;
+  border-width: 5px;
+  
 }
