@@ -33,3 +33,14 @@ div ul {
   border-width: thin;
 }
 
+
+
+.navbar-nav li:hover{
+  color: #111;
+  transform: scale(1.2);
+  text-shadow: none;
+  background-color: #ddd;
+  border: #e5f04d ridge;
+  border-width: 5px;
+  
+}
