@@ -1,6 +1,7 @@
 main div p {
   margin: auto;
   width: 50%;
+  font-family: "Times New Roman", Times, serif;
 }
 
 main h2 {
@@ -14,26 +15,59 @@ main h2 {
   /* margin: 30px; */
 }
 
-li {
-  margin-left: 40px;
-  margin-bottom: 10px;
+
+h2 {
+  text-decoration: underline;
 }
 
-#songsAndMovies {
-  /* display: flex;
-  justify-content: space-evenly; */
+#yourSongs {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: thin;
 }
-
-#theReferences {
-  margin-top: 50px;
-}
-
-div ul {
+#yourMovies {
+  display: flex;
+  flex-direction: column;
   border-style: solid;
   border-width: thin;
 }
 
+li {
+  margin: auto;
+  margin-bottom: 10px;
+}
 
+#theQuote {
+  font-size: larger;
+}
+
+#theReferences {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+h3 {
+  font-size: 1.75em;
+  text-decoration: underline;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+a {
+  font-size: larger;
+  margin: auto;
+  margin-top: 10px;
+}
+#additionalReferences {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 60px;
+}
 
 .navbar-nav li:hover{
   color: #111;
