@@ -60,7 +60,7 @@ function MovieList (emotion, title, genre, star, releaseDate, rating){
 
 
 new MovieList ('Happy', 'The Jane Austen Book Club', 'Comedy', 'Kathy Baker', 2007, 'PG13');
-new MovieList ('Happy', '500 Days of Summer', 'Romance', 'Will Smith', 2005, 'PG13');
+new MovieList ('Happy', '500 Days of Summer', 'Romance', 'Joseph Gordon-Levitt', 2005, 'PG13');
 new MovieList ('Happy', '50/50', 'Comedy', 'Joseph Gordon-Levitt', 2011, 'R');
 new MovieList ('Happy', 'The Perks of Being a Wallflower', 'Romance', 'Emma Watson', 2012, 'PG13');
 new MovieList ('Happy', 'Tangled', 'Animation', 'Mandy Moore', 2010, 'PG');
@@ -90,6 +90,7 @@ let yourSongsUL = document.getElementById ('yourSongs');
 let yourMoviesUL = document.getElementById ('yourMovies');
 let theQuoteDiv = document.getElementById ('theQuote');
 let theReferencesDiv = document.getElementById ('theReferences');
+
 
 
 function renderHappyEmotion (){
@@ -144,8 +145,6 @@ function renderHappyEmotion (){
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
-
-
 function renderSadEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
@@ -188,8 +187,6 @@ function renderSadEmotion (){
   let stringEmotion = JSON.stringify(sadEmotionRecall);
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
-
-
 
 function renderFrustratedEmotion (){
 
@@ -282,7 +279,6 @@ function renderBoredEmotion (){
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
-
 function renderLonelyEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
@@ -331,13 +327,13 @@ function renderLonelyEmotion (){
 //**************************************** (emotion)Array1 stores link (emotion)Array2 stores hyper link description see for loop in render emotion function****************************************************/
 
 let lonelyArray1 = ['https://psychiatry.uchicago.edu/news/17-easy-things-do-when-youre-feeling-lonely', 'https://www.verywellmind.com/loneliness-causes-effects-and-treatments-2795749', 'https://www.countryliving.com/uk/wellbeing/a32850447/virtual-groups-loneliness/'];
-let lonelyArray2 = ['“17 Easy Things to Do When You’re Feeling Lonely”', '“Loneliness, causes and Health Consequences ”', '“6 virtual groups to join if you want to make friends”'];
+let lonelyArray2 = ['“17 Easy Things to Do When You\'re Feeling Lonely”', '“Loneliness, causes and Health Consequences ”', '“6 virtual groups to join if you want to make friends”'];
 let boredArray1 = ['https://lifeonvirginiastreet.com/50-things-to-do-when-bored-at-home/', 'https://www.futurelearn.com/info/blog/why-we-get-bored-and-what-to-do-about-it#:~:text=Boredom%20can%20be%20caused%20by,in%20line%20at%20the%20supermarket', 'https://www.newyorker.com/culture/annals-of-inquiry/what-does-boredom-do-to-us-and-for-us'];
 let boredArray2 = ['“50 Things to do When Bored at Home”', '“Why we Get Bored and What to do About it”', '“What Does Boredom Do to Us—and for Us?”'];
 let happyArray1 = ['https://www.theatlantic.com/health/archive/2011/06/the-pursuit-of-happiness-how-do-communities-make-us-happy/241201/', 'https://bookriot.com/books-that-make-you-happy/', 'https://getzelos.com/volunteer-opportunities/', 'https://novoslabs.com/the-best-tips-to-improve-happiness/?gclid=Cj0KCQjwuaiXBhCCARIsAKZLt3lF_t0CNIC-AoYsBU3pm6PnPDjaGGWbHyj6gdmIaveVQkeJHXPBKjoaAjPLEALw_wcB'];
 let happyArray2 = ['“The Pursuit of Happiness”', '“29 Books That Make You Happy Long After The Last Page”', '“Want to Give Your Time? Check These 20 Websites for Volunteer Opportunities”', '“33 Best Tips For Maximum Happiness”'];
 let sadArray1 = ['https://www.headspace.com/meditation/happiness', 'https://www.helpguide.org/articles/mental-health/cultivating-happiness.htm', 'https://www.betterhealth.vic.gov.au/health/healthyliving/its-okay-to-feel-sad'];
-let sadArray2 = ['“Meditation for Happiness”', '“Cultivating Happiness”', '“it’s okay to feel sad”'];
+let sadArray2 = ['“Meditation for Happiness”', '“Cultivating Happiness”', '“it\'s okay to feel sad”'];
 let frustratedArray1 = ['https://www.headspace.com/meditation/how-to-relax', 'https://psychcentral.com/blog/feel-like-venting-to-a-complete-stranger-try-blahtherapy-com', 'https://mhanational.org/18-ways-cope-frustration', 'https://www.makeuseof.com/tag/7-sites-vent-anger-recover-bad-day/'];
 let frustratedArray2 = ['“How to Relax”', '“Anonymous Venting: Where to Do It and How It Helps”', '“18 Ways To Cope With Frustration”', '“7 Sites To Help You Recover From A Bad Day”'];
 
@@ -348,44 +344,18 @@ let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
 let storedHistoryAns = JSON.parse(localStorage.getItem('myHistory'));
 
 function addReferences (){
-
-  if (storedHistoryAns >= 1){
+  if (storedHistoryAns >= 5) {
     let divAddReferences = document.getElementById ('additionalReferences');
     let addReferencesHElem = document.createElement ('h3');
-    addReferencesHElem.textContent = 'Quick Read on Paranoia and links to help: ';
+    addReferencesHElem.textContent = 'How Can I Get Help for Depression?';
     divAddReferences.appendChild(addReferencesHElem);
-
     let addReferencesPElem = document.createElement('a');
-    addReferencesPElem.setAttribute('href', 'https://www.betterhelp.com/advice/how-to/how-to-stop-paranoia-and-anxiety/');
-    addReferencesPElem.innerHTML = 'How to Stop Paranoia and Anxiety';
+    addReferencesPElem.setAttribute('href', 'https://www.healthline.com/health/depression/help-for-depression');
+    addReferencesPElem.innerHTML = 'Get Help with Depression';
     // addReferencesPElem.textContent = 'P tag of REFERENCE';
     divAddReferences.appendChild(addReferencesPElem);
 
-  } else if (storedHistoryAns >= 2){
-    let divAddReferences = document.getElementById ('additionalReferences');
-    let addReferencesHElem = document.createElement ('h3');
-    addReferencesHElem.textContent = 'NAMI is the National Alliance on Mental Illness, the nation’s largest grassroots mental health organization dedicated to building better lives for the millions of Americans affected by mental illness.';
-    divAddReferences.appendChild(addReferencesHElem);
-
-    let addReferencesPElem = document.createElement('a');
-    addReferencesPElem.setAttribute('href', 'https://www.nami.org/About-Mental-Illness/Mental-Health-Conditions/Bipolar-Disorder/Overview');
-    addReferencesPElem.innerHTML = 'Bi Polar Disorder Overview';
-    // addReferencesPElem.textContent = 'P tag of REFERENCE';
-    divAddReferences.appendChild(addReferencesPElem);
-
-  } else if (storedHistoryAns >= 3){
-    let divAddReferences = document.getElementById ('additionalReferences');
-    let addReferencesHElem = document.createElement ('h3');
-    addReferencesHElem.textContent = 'PTSD and CPTSD self-help guide, PTSD: National Center for PTSD Veteran';
-    divAddReferences.appendChild(addReferencesHElem);
-
-    let addReferencesPElem = document.createElement('a');
-    addReferencesPElem.setAttribute('href', 'https://www.nhsinform.scot/illnesses-and-conditions/mental-health/mental-health-self-help-guides/ptsd-and-cptsd-self-help-guide');
-    addReferencesPElem.innerHTML = 'PTSD and CPTSD Self Help Guides';
-    // addReferencesPElem.textContent = 'P tag of REFERENCE';
-    divAddReferences.appendChild(addReferencesPElem);
-
-  } else if (storedHistoryAns >= 4){
+  } else if (storedHistoryAns >= 4) {
     let divAddReferences = document.getElementById ('additionalReferences');
     let addReferencesHElem = document.createElement ('h3');
     addReferencesHElem.textContent = 'The Anxiety and Depression Association of America (ADAA) works to prevent, treat, and cure anxiety disorders and depression';
@@ -396,19 +366,41 @@ function addReferences (){
     // addReferencesPElem.textContent = 'P tag of REFERENCE';
     divAddReferences.appendChild(addReferencesPElem);
 
-  } else if (storedHistoryAns >= 5){
+  } else if (storedHistoryAns >= 3) {
     let divAddReferences = document.getElementById ('additionalReferences');
     let addReferencesHElem = document.createElement ('h3');
-    addReferencesHElem.textContent = 'How Can I Get Help for Depression?';
+    addReferencesHElem.textContent = 'PTSD and CPTSD self-help guide, PTSD: National Center for PTSD Veteran';
     divAddReferences.appendChild(addReferencesHElem);
-
     let addReferencesPElem = document.createElement('a');
-    addReferencesPElem.setAttribute('href', 'https://www.healthline.com/health/depression/help-for-depression');
-    addReferencesPElem.innerHTML = 'Get Help with Depression';
+    addReferencesPElem.setAttribute('href', 'https://www.nhsinform.scot/illnesses-and-conditions/mental-health/mental-health-self-help-guides/ptsd-and-cptsd-self-help-guide');
+    addReferencesPElem.innerHTML = 'PTSD and CPTSD Self Help Guides';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 2) {
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'NAMI is the National Alliance on Mental Illness, the nation\'s largest grassroots mental health organization dedicated to building better lives for the millions of Americans affected by mental illness.';
+    divAddReferences.appendChild(addReferencesHElem);
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.nami.org/About-Mental-Illness/Mental-Health-Conditions/Bipolar-Disorder/Overview');
+    addReferencesPElem.innerHTML = 'Bi Polar Disorder Overview';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 1) {
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'Quick Read on Paranoia and links to help: ';
+    divAddReferences.appendChild(addReferencesHElem);
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.betterhelp.com/advice/how-to/how-to-stop-paranoia-and-anxiety/');
+    addReferencesPElem.innerHTML = 'How to Stop Paranoia and Anxiety';
     // addReferencesPElem.textContent = 'P tag of REFERENCE';
     divAddReferences.appendChild(addReferencesPElem);
   }
 }
+
 
 if (storedUserResponse >= 6 && storedUserResponse < 12){
   renderSadEmotion();
