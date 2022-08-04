@@ -169,7 +169,11 @@ fieldset {
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(245, 245, 245);
+
   width: 400px;
+
+  justify-content: space-around;
+  width: 200px;
   margin: auto;
   margin-top: 10px;
   padding: 15px;
@@ -194,13 +198,19 @@ form label{
   font-size: larger;
 }
 
-form label select{
+/* form label select{
   box-shadow: 0 10px 25px black;
   font-size: 1.5rem;
   padding: 1em 1.5em;
   background: #4d5061;
   color: white;
+} */
 
+option.red {
+    background-color: #cc0000; 
+    font-weight: bold; 
+    font-size: 12px; 
+    color: white;
 }
 
 h3{
