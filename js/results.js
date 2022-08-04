@@ -3,6 +3,7 @@
 let songMasterList = [];
 let movieMasterList = [];
 
+// localStorage.clear();
 
 // Order of Songs is IMPORTANT and will give incorrect output if changed
 
@@ -95,9 +96,9 @@ let theReferencesDiv = document.getElementById ('theReferences');
 
 function renderHappyEmotion (){
 
-  let topSongGet = document.getElementById('h2');
-  // topSongGet.textContent = 'testing';
-  topSongGet.innerHTML = 'testing222';
+  // let topSongGet = document.getElementById('h2');
+  // // topSongGet.textContent = 'testing';
+  // topSongGet.innerHTML = 'testing222';
 
 
   let songPerMoodThing = document.getElementById('masterPlay');
