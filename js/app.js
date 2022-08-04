@@ -1,5 +1,7 @@
 'use strict';
 
+// localStorage.clear();
+
 let myForm = document.getElementById('mood-form');
 let myHistory = document.getElementById('historyFromResults');
 let buttonThing = document.getElementById('listenButton');
@@ -21,7 +23,25 @@ let userResponse;
 // let userName;
 let questionSeven;
 
+preventResultsIfStoreage();
 
+function preventResultsIfStoreage(){
+  if (localStorage.getItem('stringEmotionKey')){
+    let navBarFix = document.getElementById('unique');
+    let navBarAElem = document.createElement('a');
+    navBarAElem.setAttribute('href', '/results.html');
+    navBarAElem.innerHTML = 'Mood Playlists';
+    navBarFix.appendChild(navBarAElem);
+
+  } else {
+    let navBarFix = document.getElementById('unique');
+    let navBarAElem = document.createElement('a');
+    navBarAElem.innerHTML = 'Mood Playlists';
+    navBarFix.appendChild(navBarAElem);
+  }
+}
+
+console.log(stringEmotionRecall);
 // Submit form for use on Results.HTML and stored data of user Score
 function handleSubmit(event){
   event.preventDefault();
@@ -51,38 +71,42 @@ function handleSubmit(event){
   location.replace('results.html');
 }
 
+
 // Submit for button and behavior to show Previous History
 function handleSubmit2(event){
-  event.preventDefault();
+  if ( localStorage.getItem('stringEmotionKey')){
+    event.preventDefault();
 
-  let songListHisotry = document.createElement('p');
-  songListHisotry.textContent = 'Song list from last time you were here:';
-  myHistory.appendChild(songListHisotry);
+    let songListHisotry = document.createElement('p');
+    songListHisotry.textContent = 'Song list from last time you were here:';
+    myHistory.appendChild(songListHisotry);
 
-  let mySongArticleUL = document.createElement('ul');
-  myHistory.appendChild(mySongArticleUL);
+    let mySongArticleUL = document.createElement('ul');
+    myHistory.appendChild(mySongArticleUL);
 
-  for (let i = 0; i < 5; i++){
-    let mySongLI = document.createElement('li');
-    mySongLI.textContent = `${stringEmotionRecall[0][i].title} by ${stringEmotionRecall[0][i].artist}. Released in ${stringEmotionRecall[0][i].releaseDate} on Album: ${stringEmotionRecall[0][i].album}`;
-    myHistory.appendChild(mySongLI);
+    for (let i = 0; i < 5; i++){
+      let mySongLI = document.createElement('li');
+      mySongLI.textContent = `${stringEmotionRecall[0][i].title} by ${stringEmotionRecall[0][i].artist}. Released in ${stringEmotionRecall[0][i].releaseDate} on Album: ${stringEmotionRecall[0][i].album}`;
+      myHistory.appendChild(mySongLI);
+    }
+
+    let movieListHistory = document.createElement('p');
+    movieListHistory.textContent = 'Movie list from last time you were here:';
+    myHistory.appendChild(movieListHistory);
+
+    let myMovieArticleUL = document.createElement('ul');
+    myHistory.appendChild(myMovieArticleUL);
+
+    for (let i = 0; i < 5; i++){
+      let myMovieLI = document.createElement('li');
+      myMovieLI.textContent = `${stringEmotionRecall[1][i].title} with ${stringEmotionRecall[1][i].artist}. Released in ${stringEmotionRecall[1][i].releaseDate}. Rated: ${stringEmotionRecall[1][i].rating}`;
+      myHistory.appendChild(myMovieLI);
+    }
+
+    buttonThing.removeEventListener('click', handleSubmit2);
   }
-
-  let movieListHistory = document.createElement('p');
-  movieListHistory.textContent = 'Movie list from last time you were here:';
-  myHistory.appendChild(movieListHistory);
-
-  let myMovieArticleUL = document.createElement('ul');
-  myHistory.appendChild(myMovieArticleUL);
-
-  for (let i = 0; i < 5; i++){
-    let myMovieLI = document.createElement('li');
-    myMovieLI.textContent = `${stringEmotionRecall[1][i].title} with ${stringEmotionRecall[1][i].artist}. Released in ${stringEmotionRecall[1][i].releaseDate}. Rated: ${stringEmotionRecall[1][i].rating}`;
-    myHistory.appendChild(myMovieLI);
-  }
-
-  buttonThing.removeEventListener('click', handleSubmit2);
 }
+
 
 // ATTACH MY EVENT LISTENER
 myForm.addEventListener('submit', handleSubmit);
