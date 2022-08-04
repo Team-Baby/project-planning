@@ -352,7 +352,7 @@ function addReferences (){
   if (storedHistoryAns >= 1){
     let divAddReferences = document.getElementById ('additionalReferences');
     let addReferencesHElem = document.createElement ('h3');
-    addReferencesHElem.textContent = 'Quick Read on Paranoia and links to help: ';
+    addReferencesHElem.textContent = 'Quick Read on Paranoia and links to help ';
     divAddReferences.appendChild(addReferencesHElem);
 
     let addReferencesPElem = document.createElement('a');
