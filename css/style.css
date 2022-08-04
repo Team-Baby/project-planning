@@ -175,9 +175,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(245, 245, 245);
-
   width: 400px;
-
   justify-content: space-around;
   width: 200px;
   margin: auto;
@@ -211,7 +209,6 @@ form label{
   margin-top: 30px;
 }
 
-
 select{
   margin-left: 180px;
 }
@@ -219,7 +216,6 @@ select{
 
 select, option{
   width: 300px;
-  
 }
 
 h3{
