@@ -34,11 +34,12 @@
 
     <div id="songsAndMovies">
       <div>
-      <h2>Songs</h2>
-      <audio controls>
-        <source src="img/Dancing-Queen.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-      </audio>
+        <p id="testing"></p>
+        <audio controls>
+          <source src="/" type="audio/mp3" id="masterPlay">
+          Your browser does not support the audio element.
+        </audio>
+        <h2>Songs</h2>
         <ul id="yourSongs">
         </ul>
       </div>
@@ -67,10 +68,17 @@
 
   <footer>
     <h2>Gold Diggers</h2>
-    <audio controls>
+
+    <div id="audioSource">
+
+    </div>
+
+    <audio controls id="audioSource2">
       <source src="img/Gold-Digger.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
+
+
     <h2>&copy CodeFellows</h2>
   </footer>
   <script src="js/results.js"></script>
