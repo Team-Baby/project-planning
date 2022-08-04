@@ -3,6 +3,7 @@
 let songMasterList = [];
 let movieMasterList = [];
 
+// localStorage.clear();
 
 // Order of Songs is IMPORTANT and will give incorrect output if changed
 
@@ -95,7 +96,17 @@ let theReferencesDiv = document.getElementById ('theReferences');
 
 function renderHappyEmotion (){
 
+  // let topSongGet = document.getElementById('h2');
+  // // topSongGet.textContent = 'testing';
+  // topSongGet.innerHTML = 'testing222';
+
+
+  let songPerMoodThing = document.getElementById('masterPlay');
+  songPerMoodThing.setAttribute('src', '/img/Dancing-Queen.mp3');
+
   // let storedUserName = JSON.parse(localStorage.getItem('formName'));
+
+
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -147,6 +158,9 @@ function renderHappyEmotion (){
 
 function renderSadEmotion (){
 
+  let songPerMoodThing = document.getElementById('masterPlay');
+  songPerMoodThing.setAttribute('src', '/img/Nirvana-Something-In-The-Way.mp3');
+
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
   moodHeadE.textContent = 'Sad';
@@ -189,6 +203,9 @@ function renderSadEmotion (){
 }
 
 function renderFrustratedEmotion (){
+
+  let songPerMoodThing = document.getElementById('masterPlay');
+  songPerMoodThing.setAttribute('src', '/img/Bad_Blood.ogg');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -236,6 +253,9 @@ function renderFrustratedEmotion (){
 
 function renderBoredEmotion (){
 
+  let songPerMoodThing = document.getElementById('masterPlay');
+  songPerMoodThing.setAttribute('src', '/img/Mariah-Carey-Always-Be-My-Baby-Gospelmetrics.com-2w.mp3');
+
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
   moodHeadE.textContent = 'Bored';
@@ -280,6 +300,9 @@ function renderBoredEmotion (){
 }
 
 function renderLonelyEmotion (){
+
+  let songPerMoodThing = document.getElementById('masterPlay');
+  songPerMoodThing.setAttribute('src', '/img/AllByMyself.mp3');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -424,4 +447,6 @@ else if(storedUserResponse >= 33 && storedUserResponse< 45){
   renderHappyEmotion();
   addReferences();
 }
+
+
 
