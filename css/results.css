@@ -7,10 +7,12 @@ main div p {
   width: 50%;
   font-size: 1.75em;
 }
+
 h1 {
   color: #e5f04d;
   font-weight: bold;
 }
+
 main h2 {
   font-size: xx-large;
   /* margin: auto; */
@@ -22,6 +24,16 @@ main h2 {
   /* margin: 30px; */
 }
 
+main audio {
+  font-size: 1.75em;
+  margin: auto;
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
 
 h2 {
   font-weight: bold;
