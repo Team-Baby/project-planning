@@ -94,10 +94,14 @@ let theReferencesDiv = document.getElementById ('theReferences');
 
 function renderHappyEmotion (){
 
+  // let storedUserName = JSON.parse(localStorage.getItem('formName'));
+
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
-  moodHeadE.textContent = 'Happy?';
+
+  moodHeadE.textContent = 'Happy??';
   moodOverAll.appendChild(moodHeadE);
+
   let moodContentP = document.createElement('p');
   moodContentP.textContent = 'Based on your choices, you are in a happy state of mind! Everyone wants to be happy, and it\'s important to maintain that mindset. Keep making that big smile as you take a look at our recommended list of songs and movies list. You will also see some references, check them out as well!';
   moodOverAll.appendChild(moodContentP);
@@ -341,27 +345,91 @@ let frustratedArray2 = ['“How to Relax”', '“Anonymous Venting: Where to Do
 // carries storedUserResponse from app.js page for use to determine which Emotion to render and what is saved in storage to and sent to index.html
 
 let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
+let storedHistoryAns = JSON.parse(localStorage.getItem('myHistory'));
+
+function addReferences (){
+
+  if (storedHistoryAns >= 1){
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'Quick Read on Paranoia and links to help: ';
+    divAddReferences.appendChild(addReferencesHElem);
+
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.betterhelp.com/advice/how-to/how-to-stop-paranoia-and-anxiety/');
+    addReferencesPElem.innerHTML = 'How to Stop Paranoia and Anxiety';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 2){
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'NAMI is the National Alliance on Mental Illness, the nation’s largest grassroots mental health organization dedicated to building better lives for the millions of Americans affected by mental illness.';
+    divAddReferences.appendChild(addReferencesHElem);
+
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.nami.org/About-Mental-Illness/Mental-Health-Conditions/Bipolar-Disorder/Overview');
+    addReferencesPElem.innerHTML = 'Bi Polar Disorder Overview';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 3){
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'PTSD and CPTSD self-help guide, PTSD: National Center for PTSD Veteran';
+    divAddReferences.appendChild(addReferencesHElem);
+
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.nhsinform.scot/illnesses-and-conditions/mental-health/mental-health-self-help-guides/ptsd-and-cptsd-self-help-guide');
+    addReferencesPElem.innerHTML = 'PTSD and CPTSD Self Help Guides';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 4){
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'The Anxiety and Depression Association of America (ADAA) works to prevent, treat, and cure anxiety disorders and depression';
+    divAddReferences.appendChild(addReferencesHElem);
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://adaa.org/');
+    addReferencesPElem.innerHTML = 'ADAA Link';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+
+  } else if (storedHistoryAns >= 5){
+    let divAddReferences = document.getElementById ('additionalReferences');
+    let addReferencesHElem = document.createElement ('h3');
+    addReferencesHElem.textContent = 'How Can I Get Help for Depression?';
+    divAddReferences.appendChild(addReferencesHElem);
+
+    let addReferencesPElem = document.createElement('a');
+    addReferencesPElem.setAttribute('href', 'https://www.healthline.com/health/depression/help-for-depression');
+    addReferencesPElem.innerHTML = 'Get Help with Depression';
+    // addReferencesPElem.textContent = 'P tag of REFERENCE';
+    divAddReferences.appendChild(addReferencesPElem);
+  }
+}
 
 if (storedUserResponse >= 6 && storedUserResponse < 12){
   renderSadEmotion();
+  addReferences();
 }
-else if(storedUserResponse >= 12 && storedUserResponse <= 19){
+
+else if(storedUserResponse >= 12 && storedUserResponse < 19){
+
   renderLonelyEmotion();
-  // renderMoodContent();
+  addReferences();
 }
-else if(storedUserResponse >= 20 && storedUserResponse < 26){
+else if(storedUserResponse >= 19 && storedUserResponse < 26){
   renderBoredEmotion();
-  // renderMoodContent();
+  addReferences();
 }
-else if(storedUserResponse >= 27 && storedUserResponse < 33){
+else if(storedUserResponse >= 26 && storedUserResponse < 33){
   renderFrustratedEmotion();
-  // renderMoodContent();
+  addReferences();
 }
-else if(storedUserResponse >= 34 && storedUserResponse< 45){
+else if(storedUserResponse >= 33 && storedUserResponse< 45){
   renderHappyEmotion();
-  // renderMoodContent();
+  addReferences();
 }
-
-console.log(storedUserResponse);
-
 
