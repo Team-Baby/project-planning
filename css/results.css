@@ -1,10 +1,18 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
 main div p {
   margin: auto;
   width: 50%;
-}
-
-main h2 {
   font-size: 1.75em;
+}
+h1 {
+  color: #e5f04d;
+  font-weight: bold;
+}
+main h2 {
+  font-size: xx-large;
   /* margin: auto; */
   width: 100%;
   height: 100px;
@@ -14,22 +22,78 @@ main h2 {
   /* margin: 30px; */
 }
 
-li {
-  margin-left: 40px;
-  margin-bottom: 10px;
+
+h2 {
+  font-weight: bold;
+  color: black;
 }
 
-#songsAndMovies {
-  /* display: flex;
-  justify-content: space-evenly; */
-}
+#yourSongs {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: thin;
 
-#theReferences {
-  margin-top: 50px;
 }
-
-div ul {
+#yourMovies {
+  display: flex;
+  flex-direction: column;
   border-style: solid;
   border-width: thin;
 }
 
+li {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#theQuote {
+  font-size: larger;
+}
+#theQuote {
+  font-size: medium;
+}
+
+#theReferences {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+h3 {
+  font-size: xx-large;
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+a {
+  font-size: larger;
+  margin: auto;
+  margin-top: 10px;
+  
+}
+a:hover {
+  color: #111;
+  transform: scale(1.2);
+}
+#additionalReferences {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.navbar-nav li:hover{
+  color: #111;
+  transform: scale(1.2);
+  text-shadow: none;
+  background-color: #ddd;
+  border: #e5f04d ridge;
+  border-width: 5px;
+  
+}

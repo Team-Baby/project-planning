@@ -100,7 +100,7 @@ function renderHappyEmotion (){
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
 
-  moodHeadE.textContent = 'Happy??';
+  moodHeadE.textContent = 'Happy';
   moodOverAll.appendChild(moodHeadE);
 
   let moodContentP = document.createElement('p');
@@ -149,7 +149,7 @@ function renderSadEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
-  moodHeadE.textContent = 'Sad?';
+  moodHeadE.textContent = 'Sad';
   moodOverAll.appendChild(moodHeadE);
   let moodContentP = document.createElement('p');
   moodContentP.textContent = 'Based on your choices, you are in a sad state of mind! This is one of the 5 most common feelings, and it happens to everyone along with letting yourself experience that emotion. Take a deep breath and check out our recommended list of songs and movies. You will also see some references, check them out as well!';
@@ -192,7 +192,7 @@ function renderFrustratedEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
-  moodHeadE.textContent = 'Frustrated?';
+  moodHeadE.textContent = 'Frustrated';
   moodOverAll.appendChild(moodHeadE);
   let moodContentP = document.createElement('p');
   moodContentP.textContent = 'Based on your choices, you are in a frustrated state of mind! You may be angry, like you\'re ready to run through a brick wall! As it is a very common mood, it is one of the only moods that can be changed quickly. Embrace that emotion and take a look at our recommended list of songs and movies. You will also see some references, check them out as well!';
@@ -238,7 +238,7 @@ function renderBoredEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
-  moodHeadE.textContent = 'Bored?';
+  moodHeadE.textContent = 'Bored';
   moodOverAll.appendChild(moodHeadE);
   let moodContentP = document.createElement('p');
   moodContentP.textContent = 'Based on your choices, you are in a bored state of mind! You are someone who may be active and enjoying things in life, but missing some fun! Take a look at our list of our recommended songs and movies. You will also see some references, check them out as well!';
