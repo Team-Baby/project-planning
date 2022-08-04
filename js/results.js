@@ -92,7 +92,6 @@ let theQuoteDiv = document.getElementById ('theQuote');
 let theReferencesDiv = document.getElementById ('theReferences');
 
 
-
 function renderHappyEmotion (){
 
   let moodOverAll = document.getElementById('moodHeader');
@@ -117,12 +116,17 @@ function renderHappyEmotion (){
   }
 
   let quoteDivPElem = document.createElement('p');
-  quoteDivPElem.textContent = 'Happy Happy Joy Joy - fill in more info';
+  quoteDivPElem.textContent = '"Don\'t worry. Be happy." Bobby Mcferrin';
   theQuoteDiv.appendChild(quoteDivPElem);
 
-  let theReferencesDivPElem = document.createElement('p');
-  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: HAPPY';
-  theReferencesDiv.appendChild(theReferencesDivPElem);
+  //****************** added for loop to setAttribute and apply innerHTML hyper link desription */
+  for(let i = 0; i < happyArray1.length; i++){
+    let theReferencesDivPElem = document.createElement('a');
+    theReferencesDivPElem.setAttribute('href', happyArray1[i]);
+    theReferencesDivPElem.innerHTML = happyArray2[i];
+    theReferencesDiv.appendChild(theReferencesDivPElem);
+
+  }
 
   let happySongList = songMasterList.filter(song => song.emotion === 'Happy');
   let happyMovieList = movieMasterList.filter(movie => movie.emotion === 'Happy');
@@ -135,6 +139,8 @@ function renderHappyEmotion (){
   let stringEmotion = JSON.stringify(happyEmotionRecall);
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
+
+
 
 function renderSadEmotion (){
 
@@ -159,12 +165,15 @@ function renderSadEmotion (){
   }
 
   let quoteDivPElem = document.createElement('p');
-  quoteDivPElem.textContent = 'Sad Sad Sad Sad - fill in more info';
+  quoteDivPElem.textContent = '“Sadness gives depth. Happiness gives height. Sadness gives roots. Happiness gives branches. Happiness is like a tree going into the sky, and sadness is like the roots going down into the womb of the earth. Both are needed, and the higher a tree goes, the deeper it goes, simultaneously. The bigger the tree, the bigger will be its roots. In fact, it is always in proportion. That\'s its balance.”- Osho';
   theQuoteDiv.appendChild(quoteDivPElem);
 
-  let theReferencesDivPElem = document.createElement('p');
-  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: SAD ';
-  theReferencesDiv.appendChild(theReferencesDivPElem);
+  for(let i = 0; i < sadArray1.length; i++){
+    let theReferencesDivPElem = document.createElement('a');
+    theReferencesDivPElem.setAttribute('href', sadArray1[i]);
+    theReferencesDivPElem.innerHTML = sadArray2[i];
+    theReferencesDiv.appendChild(theReferencesDivPElem);
+  }
 
   let sadSongList = songMasterList.filter(song => song.emotion === 'Sad');
   let sadMovieList = movieMasterList.filter(movie => movie.emotion === 'Sad');
@@ -175,6 +184,8 @@ function renderSadEmotion (){
   let stringEmotion = JSON.stringify(sadEmotionRecall);
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
+
+
 
 function renderFrustratedEmotion (){
 
@@ -200,12 +211,15 @@ function renderFrustratedEmotion (){
   }
 
   let quoteDivPElem = document.createElement('p');
-  quoteDivPElem.textContent = 'Frustrated Frustrated Frustrated - fill in more info';
+  quoteDivPElem.textContent = '“Explain your anger instead of expressing it, and you\'ll find solutions instead of arguments.” - Anonymous';
   theQuoteDiv.appendChild(quoteDivPElem);
 
-  let theReferencesDivPElem = document.createElement('p');
-  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: FRUSTRATED ';
-  theReferencesDiv.appendChild(theReferencesDivPElem);
+  for(let i = 0; i < frustratedArray1.length; i++){
+    let theReferencesDivPElem = document.createElement('a');
+    theReferencesDivPElem.setAttribute('href', frustratedArray1[i]);
+    theReferencesDivPElem.innerHTML = frustratedArray2[i];
+    theReferencesDiv.appendChild(theReferencesDivPElem);
+  }
 
   let frustratedSongList = songMasterList.filter(song => song.emotion === 'Frustrated');
   let frustratedMovieList = movieMasterList.filter(movie => movie.emotion === 'Frustrated');
@@ -242,12 +256,15 @@ function renderBoredEmotion (){
   }
 
   let quoteDivPElem = document.createElement('p');
-  quoteDivPElem.textContent = 'Bored Bored Bored - fill in more info';
+  quoteDivPElem.textContent = '"Bored of being bored because being bored is boring." - Anonymous';
   theQuoteDiv.appendChild(quoteDivPElem);
 
-  let theReferencesDivPElem = document.createElement('p');
-  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: BORED ';
-  theReferencesDiv.appendChild(theReferencesDivPElem);
+  for(let i = 0; i < boredArray1.length; i++){
+    let theReferencesDivPElem = document.createElement('a');
+    theReferencesDivPElem.setAttribute('href', boredArray1[i]);
+    theReferencesDivPElem.innerHTML = boredArray2[i];
+    theReferencesDiv.appendChild(theReferencesDivPElem);
+  }
 
   let boredSongList = songMasterList.filter(song => song.emotion === 'Bored');
   let boredMovieList = movieMasterList.filter(movie => movie.emotion === 'Bored');
@@ -260,6 +277,7 @@ function renderBoredEmotion (){
   let stringEmotion = JSON.stringify(boredEmotionRecall);
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
+
 
 function renderLonelyEmotion (){
 
@@ -284,12 +302,15 @@ function renderLonelyEmotion (){
   }
 
   let quoteDivPElem = document.createElement('p');
-  quoteDivPElem.textContent = 'Lonely Lonely Lonely - fill in more info';
+  quoteDivPElem.textContent = '“Sometimes you need to be alone. Not to be lonely, but to enjoy your free time being yourself.” —Anonymous';
   theQuoteDiv.appendChild(quoteDivPElem);
 
-  let theReferencesDivPElem = document.createElement('p');
-  theReferencesDivPElem.textContent = 'These are the additonal resources for the emotion: LONELY ';
-  theReferencesDiv.appendChild(theReferencesDivPElem);
+  for(let i = 0; i < lonelyArray1.length; i++){
+    let theReferencesDivPElem = document.createElement('a');
+    theReferencesDivPElem.setAttribute('href', lonelyArray1[i]);
+    theReferencesDivPElem.innerHTML = lonelyArray2[i];
+    theReferencesDiv.appendChild(theReferencesDivPElem);
+  }
 
   let lonelySongList = songMasterList.filter(song => song.emotion === 'Lonely');
   let lonelyMovieList = movieMasterList.filter(movie => movie.emotion === 'Lonely');
@@ -303,6 +324,19 @@ function renderLonelyEmotion (){
   localStorage.setItem ('stringEmotionKey', stringEmotion);
 }
 
+//**************************************** (emotion)Array1 stores link (emotion)Array2 stores hyper link description see for loop in render emotion function****************************************************/
+
+let lonelyArray1 = ['https://psychiatry.uchicago.edu/news/17-easy-things-do-when-youre-feeling-lonely', 'https://www.verywellmind.com/loneliness-causes-effects-and-treatments-2795749', 'https://www.countryliving.com/uk/wellbeing/a32850447/virtual-groups-loneliness/'];
+let lonelyArray2 = ['“17 Easy Things to Do When You’re Feeling Lonely”', '“Loneliness, causes and Health Consequences ”', '“6 virtual groups to join if you want to make friends”'];
+let boredArray1 = ['https://lifeonvirginiastreet.com/50-things-to-do-when-bored-at-home/', 'https://www.futurelearn.com/info/blog/why-we-get-bored-and-what-to-do-about-it#:~:text=Boredom%20can%20be%20caused%20by,in%20line%20at%20the%20supermarket', 'https://www.newyorker.com/culture/annals-of-inquiry/what-does-boredom-do-to-us-and-for-us'];
+let boredArray2 = ['“50 Things to do When Bored at Home”', '“Why we Get Bored and What to do About it”', '“What Does Boredom Do to Us—and for Us?”'];
+let happyArray1 = ['https://www.theatlantic.com/health/archive/2011/06/the-pursuit-of-happiness-how-do-communities-make-us-happy/241201/', 'https://bookriot.com/books-that-make-you-happy/', 'https://getzelos.com/volunteer-opportunities/', 'https://novoslabs.com/the-best-tips-to-improve-happiness/?gclid=Cj0KCQjwuaiXBhCCARIsAKZLt3lF_t0CNIC-AoYsBU3pm6PnPDjaGGWbHyj6gdmIaveVQkeJHXPBKjoaAjPLEALw_wcB'];
+let happyArray2 = ['“The Pursuit of Happiness”', '“29 Books That Make You Happy Long After The Last Page”', '“Want to Give Your Time? Check These 20 Websites for Volunteer Opportunities”', '“33 Best Tips For Maximum Happiness”'];
+let sadArray1 = ['https://www.headspace.com/meditation/happiness', 'https://www.helpguide.org/articles/mental-health/cultivating-happiness.htm', 'https://www.betterhealth.vic.gov.au/health/healthyliving/its-okay-to-feel-sad'];
+let sadArray2 = ['“Meditation for Happiness”', '“Cultivating Happiness”', '“it’s okay to feel sad”'];
+let frustratedArray1 = ['https://www.headspace.com/meditation/how-to-relax', 'https://psychcentral.com/blog/feel-like-venting-to-a-complete-stranger-try-blahtherapy-com', 'https://mhanational.org/18-ways-cope-frustration', 'https://www.makeuseof.com/tag/7-sites-vent-anger-recover-bad-day/'];
+let frustratedArray2 = ['“How to Relax”', '“Anonymous Venting: Where to Do It and How It Helps”', '“18 Ways To Cope With Frustration”', '“7 Sites To Help You Recover From A Bad Day”'];
+
 
 // carries storedUserResponse from app.js page for use to determine which Emotion to render and what is saved in storage to and sent to index.html
 
@@ -311,7 +345,7 @@ let storedUserResponse = JSON.parse(localStorage.getItem('myStringResponse'));
 if (storedUserResponse >= 6 && storedUserResponse < 12){
   renderSadEmotion();
 }
-else if(storedUserResponse >= 13 && storedUserResponse < 19){
+else if(storedUserResponse >= 12 && storedUserResponse <= 19){
   renderLonelyEmotion();
   // renderMoodContent();
 }
@@ -329,3 +363,5 @@ else if(storedUserResponse >= 34 && storedUserResponse< 45){
 }
 
 console.log(storedUserResponse);
+
+
