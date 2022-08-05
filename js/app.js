@@ -23,6 +23,7 @@ let userResponse;
 // let userName;
 let questionSeven;
 
+
 preventResultsIfStorage();
 
 function preventResultsIfStorage(){
@@ -41,7 +42,7 @@ function preventResultsIfStorage(){
   }
 }
 
-console.log(stringEmotionRecall);
+
 // Submit form for use on Results.HTML and stored data of user Score
 function handleSubmit(event){
   event.preventDefault();
