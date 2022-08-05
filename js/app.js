@@ -23,13 +23,13 @@ let userResponse;
 // let userName;
 let questionSeven;
 
-preventResultsIfStoreage();
+preventResultsIfStorage();
 
-function preventResultsIfStoreage(){
+function preventResultsIfStorage(){
   if (localStorage.getItem('stringEmotionKey')){
     let navBarFix = document.getElementById('unique');
     let navBarAElem = document.createElement('a');
-    navBarAElem.setAttribute('href', '/results.html');
+    navBarAElem.setAttribute('href', './results.html');
     navBarAElem.innerHTML = 'Mood Playlists';
     navBarFix.appendChild(navBarAElem);
 
