@@ -6,7 +6,7 @@ function preventResultsIfStoreage(){
   if (localStorage.getItem('stringEmotionKey')){
     let navBarFix = document.getElementById('unique2');
     let navBarAElem = document.createElement('a');
-    navBarAElem.setAttribute('href', '/results.html');
+    navBarAElem.setAttribute('href', './results.html');
     navBarAElem.innerHTML = 'Mood Playlists';
     navBarFix.appendChild(navBarAElem);
 
