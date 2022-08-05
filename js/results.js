@@ -30,7 +30,7 @@ new SongList ('Sad', 'Un-Break My Heart', 'R&B', 'Toni Braxton', 1996, 'Secrets'
 new SongList ('Sad', 'What Hurts the Most', 'Country', 'Rascal Flatts', 2008, 'Rascal Flats');
 new SongList ('Sad', 'Balenciaga Challenge', 'Country', '6lack', 2018, 'East Atlanta Love Letter');
 new SongList ('Frustrated', 'Way I Am', 'Rap', 'Eminem', 2000, 'The Marshall Mathers LP');
-new SongList ('Frustrated', 'We Are Never Getting Back Together', 'Pop', 'Taylor Swift', 2012, 'Red');
+new SongList ('Frustrated', 'Bad Blood', 'Pop', 'Taylor Swift', 2014, '1989');
 new SongList ('Frustrated', 'Smells Like Teen Spirit', 'Rock', 'Nirvana' , 1991, 'Nevermind');
 new SongList ('Frustrated', 'Before He Cheats', 'Country', 'Carrie Underwood', 2005, 'Some Hearts');
 new SongList ('Frustrated', 'Miss Understanding', 'Jazz', 'Kamasi Washington', 2015, 'The Epic');
@@ -96,13 +96,12 @@ let theReferencesDiv = document.getElementById ('theReferences');
 
 function renderHappyEmotion (){
 
-  // let topSongGet = document.getElementById('h2');
-  // // topSongGet.textContent = 'testing';
-  // topSongGet.innerHTML = 'testing222';
+  let topSongGet = document.getElementById('testing');
+  topSongGet.textContent = 'Here, try Dancing Queen by ABBA from 1976.';
 
 
   let songPerMoodThing = document.getElementById('masterPlay');
-  songPerMoodThing.setAttribute('src', '/img/Dancing-Queen.mp3');
+  songPerMoodThing.setAttribute('src', './img/Dancing-Queen.mp3');
 
   // let storedUserName = JSON.parse(localStorage.getItem('formName'));
 
@@ -158,8 +157,11 @@ function renderHappyEmotion (){
 
 function renderSadEmotion (){
 
+  let topSongGet = document.getElementById('testing');
+  topSongGet.textContent = 'Here, try Something In The Way by Nirvana from 1993.';
+
   let songPerMoodThing = document.getElementById('masterPlay');
-  songPerMoodThing.setAttribute('src', '/img/Nirvana-Something-In-The-Way.mp3');
+  songPerMoodThing.setAttribute('src', './img/Nirvana-Something-In-The-Way.mp3');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -204,8 +206,11 @@ function renderSadEmotion (){
 
 function renderFrustratedEmotion (){
 
+  let topSongGet = document.getElementById('testing');
+  topSongGet.textContent = 'Here, try Bad Blood by Tailor Swift from 2014.';
+
   let songPerMoodThing = document.getElementById('masterPlay');
-  songPerMoodThing.setAttribute('src', '/img/Bad_Blood.ogg');
+  songPerMoodThing.setAttribute('src', './img/Bad_Blood.ogg');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -253,8 +258,11 @@ function renderFrustratedEmotion (){
 
 function renderBoredEmotion (){
 
+  let topSongGet = document.getElementById('testing');
+  topSongGet.textContent = 'Here, Always Be My Baby by Mariah Carey from 1995.';
+
   let songPerMoodThing = document.getElementById('masterPlay');
-  songPerMoodThing.setAttribute('src', '/img/Mariah-Carey-Always-Be-My-Baby-Gospelmetrics.com-2w.mp3');
+  songPerMoodThing.setAttribute('src', './img/Mariah-Carey-Always-Be-My-Baby.mp3');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -301,8 +309,11 @@ function renderBoredEmotion (){
 
 function renderLonelyEmotion (){
 
+  let topSongGet = document.getElementById('testing');
+  topSongGet.textContent = 'Here, try All By Myself by Eric Carmen from 1975.';
+
   let songPerMoodThing = document.getElementById('masterPlay');
-  songPerMoodThing.setAttribute('src', '/img/AllByMyself.mp3');
+  songPerMoodThing.setAttribute('src', './img/AllByMyself.mp3');
 
   let moodOverAll = document.getElementById('moodHeader');
   let moodHeadE = document.createElement('h1');
@@ -447,6 +458,3 @@ else if(storedUserResponse >= 33 && storedUserResponse< 45){
   renderHappyEmotion();
   addReferences();
 }
-
-
-
